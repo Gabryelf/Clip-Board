@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ClipMaker Studio — Анимационный конструктор клипов</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">🎬</div>
+                <span>ClipMaker</span>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title">🎞️ Фоновый слой</div>
+                <div class="upload-area" id="bgUploadArea">
+                    <input type="file" id="bgUpload" accept="image/*" hidden>
+                    <div class="upload-placeholder">
+                        <span class="upload-icon">🖼️</span>
+                        <span>Загрузить фон</span>
+                        <small>JPG, PNG, WEBP</small>
+                    </div>
+                </div>
+                <button id="clearBg" class="btn-secondary">Очистить фон</button>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title">🖼️ Средний план</div>
+                <div class="upload-area" id="midUploadArea">
+                    <input type="file" id="midUpload" accept="image/*" hidden>
+                    <div class="upload-placeholder">
+                        <span class="upload-icon">✨</span>
+                        <span>Загрузить изображение</span>
+                    </div>
+                </div>
+                <div class="slider-group">
+                    <label>Размер <span id="midSizeVal">40</span>%</label>
+                    <input type="range" id="midSize" min="20" max="80" value="40" step="1">
+                </div>
+                <div class="select-group">
+                    <label>Анимация</label>
+                    <select id="midAnimType">
+                        <option value="slide">➡️ Скольжение</option>
+                        <option value="rotate">🔄 Вращение</option>
+                        <option value="bounce">📈 Подпрыгивание</option>
+                        <option value="zoom">🔍 Пульсация</option>
+                        <option value="float">🌀 Парение</option>
+                        <option value="shake">⚡ Дрожание</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title">✨ Ближний план</div>
+                <div class="upload-area" id="frontUploadArea">
+                    <input type="file" id="frontUpload" accept="image/*" hidden>
+                    <div class="upload-placeholder">
+                        <span class="upload-icon">🌟</span>
+                        <span>Загрузить изображение</span>
+                    </div>
+                </div>
+                <div class="slider-group">
+                    <label>Размер <span id="frontSizeVal">60</span>%</label>
+                    <input type="range" id="frontSize" min="30" max="100" value="60" step="1">
+                </div>
+                <div class="select-group">
+                    <label>Анимация</label>
+                    <select id="frontAnimType">
+                        <option value="slide">➡️ Скольжение</option>
+                        <option value="rotate">🔄 Вращение</option>
+                        <option value="bounce">📈 Подпрыгивание</option>
+                        <option value="zoom">🔍 Пульсация</option>
+                        <option value="float">🌀 Парение</option>
+                        <option value="shake">⚡ Дрожание</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title">🎵 Аудио</div>
+                <div class="upload-area" id="musicUploadArea">
+                    <input type="file" id="musicUpload" accept="audio/*" hidden>
+                    <div class="upload-placeholder">
+                        <span class="upload-icon">🎵</span>
+                        <span>Фоновая музыка</span>
+                        <small>MP3, WAV, OGG</small>
+                    </div>
+                </div>
+                <div class="audio-status" id="audioStatus">Нет аудио</div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title">⚡ Настройки анимации</div>
+                <div class="slider-group">
+                    <label>Скорость <span id="speedVal">1.0</span>x</label>
+                    <input type="range" id="speedSlider" min="0.3" max="2.5" step="0.05" value="1.0">
+                </div>
+            </div>
+
+            <div class="sidebar-actions">
+                <button id="previewBtn" class="btn-primary">▶️ Предпросмотр</button>
+                <button id="stopAnimBtn" class="btn-secondary">⏹️ Стоп</button>
+                <div class="export-buttons">
+                    <button id="exportWebmBtn" class="btn-export">🎥 WebM</button>
+                    <button id="exportGifBtn" class="btn-export">🎞️ GIF</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Canvas Area -->
+        <main class="canvas-area">
+            <div class="canvas-wrapper">
+                <canvas id="clipCanvas" width="1280" height="720"></canvas>
+                <div class="canvas-overlay" id="canvasOverlay">
+                    <div class="overlay-content">
+                        <span>🎬</span>
+                        <p>Загрузите изображения и нажмите ▶️</p>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas-info">
+                <span id="layerInfo">Фон: — | Средний: — | Ближний: —</span>
+                <span id="exportProgress" class="progress-hidden"></span>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/canvasRenderer.js"></script>
+    <script src="js/videoExporter.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
