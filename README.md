@@ -30,7 +30,10 @@
 ## 🎥 Демонстрация работы
 
 <div align="center">
-  <video src="https://github.com/Gabryelf/Clip-Board/blob/master/docs/video/view_v1.mp4" controls width="250"></video> 
+  <a href="https://github.com/Gabryelf/Clip-Board/blob/master/docs/video/view_v1.mp4">
+    <img src="https://img.shields.io/badge/🎬-СМОТРЕТЬ_ДЕМО-ffcf9a?style=for-the-badge&logo=github&logoColor=black" alt="Демо">
+  </a>
+  <video src="https://github.com/Gabryelf/Clip-Board/raw/master/docs/video/view_v1.mp4" controls width="250"></video>
 </div>
 
 ---
