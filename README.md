@@ -9,7 +9,7 @@
   ### 🎬 ClipMaker Studio — конструктор анимированных клипов
 </div>
 
-![Версия](https://img.shields.io/badge/версия-1.0.0-blue)
+![Версия](https://img.shields.io/badge/версия-0.0.1-blue)
 ![Лицензия](https://img.shields.io/badge/лицензия-MIT-green)
 ![HTML5](https://img.shields.io/badge/HTML5-FF5722?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
